@@ -12,6 +12,7 @@
         v-for="(page, index) in totalPages"
         :key="`key-${index}`"
         :page="page"
+        :current-page="currentPage"
         @setPage="setPage"
       />
     </div>

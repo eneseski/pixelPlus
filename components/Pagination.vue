@@ -1,6 +1,11 @@
+n
 <template>
   <div>
-    <button :disabled="disable" class="pagination__btn" @click="setPage(page)">
+    <button
+      :disabled="currentPage === page"
+      class="pagination__btn"
+      @click="setPage(page)"
+    >
       {{ page }}
     </button>
   </div>
@@ -14,16 +19,15 @@ export default {
       type: Number,
       required: true,
     },
-  },
-  data() {
-    return {
-      disable: false,
-    }
+    currentPage: {
+      type: Number,
+      required: true,
+    },
   },
   methods: {
     setPage(page) {
       this.$emit('setPage', page)
-      // window.scrollTo({ top: 0, behavior: 'smooth' })
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     },
   },
 }
