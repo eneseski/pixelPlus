@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>Pixel Plus</h1>
+    <nuxt-link to="/"><h1>Pixel Plus</h1></nuxt-link>
     <Navbar />
     <img :src="src" />
   </header>
@@ -26,9 +26,13 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  a {
+    text-decoration: none;
+    color: #000;
 
-  h1 {
-    font-size: 22px;
+    h1 {
+      font-size: 22px;
+    }
   }
 
   img {
